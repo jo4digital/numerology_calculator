@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Numerology calculator</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <div>
+        {% if sent: %}
+        <h1>Your personal life path</h1>
+          <p><span>Life path number: </span>{{ num }}</p>
+          <p><span>Life path status:<br></span>{{ text|safe }}</p>
+        {% else: %}
+        <h1>מחשבון נומרולוגי</h1>
+          <p><strong>מלאו את הפרטים בטופס וגלו מה מספר הנומרולוגי שלכם</strong></p>
+        </div>
+        <div>
+          <form class="elementor-form" action="{{ url_for('home') }}" method="post" name="מחשבון נומרולוגי">
+            <input type="hidden" name="post_id" value="1541">
+            <input type="hidden" name="form_id" value="75e87d7">
+            <input type="hidden" name="referer_title" value="מחשבון נומרולוגי - רדמילה נומרולוגית">
+            <input type="hidden" name="queried_id" value="1541">
+            <div class="elementor-form-fields-wrapper elementor-labels-above">
+              <div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-50 elementor-field-required elementor-mark-required">
+                <label for="form-field-name" class="elementor-field-label">שם מלא</label>
+                <input size="1" type="text" name="form_fields[name]" id="form-field-name" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="שם מלא" required="required" aria-required="true">
+              </div>
+              <div class="elementor-field-type-date elementor-field-group elementor-column elementor-field-group-field_cc0ac99 elementor-col-50 elementor-field-required elementor-mark-required">
+                <label for="form-field-field_cc0ac99" class="elementor-field-label">תאריך לידה</label>
+                <input type="text" name="form_fields[field_cc0ac99]" id="form-field-field_cc0ac99" class="elementor-field elementor-size-sm elementor-field-textual elementor-date-field flatpickr-input" placeholder="YYYY-MM-DD" required="required" aria-required="true" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+              </div>
+              <div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required elementor-mark-required">
+                <label for="form-field-email" class="elementor-field-label">אימייל</label>
+                <input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="אימייל" required="required" aria-required="true">
+              </div>
+              <div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+                <button type="submit" class="elementor-button elementor-size-sm">
+                  <span>
+                    <span class=" elementor-button-icon"></span>
+                    <span class="elementor-button-text">שליחה</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

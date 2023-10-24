@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block title %}Numerology{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="my-3 bg-white text-dark">
+      {% if sent: %}
+      <p class="mx-3 fw-bold fs-2 om-text-rtl om-h-color"><span>המספר הנומורולוגי שלך: </span>{{ num }}</p>
+      <p class="mx-3 om-text-rtl om-color"></span>{{ text|safe }}</p>
+      <a class="col-1 mx-auto btn om-btn" href="{{ url_for('home') }}" role="button">חזרה</a>
+
+      {% else: %}
+      <form action="{{ url_for('home') }}" method="post" class="row g-3 mx-3 needs-validation">
+        <div class="col-md-6">
+          <label for="date" class="form-label d-flex justify-content-end">* תאריך לידה</label>
+          <input type="date" name="date" id="date" pattern="\d{2}-\d{2}-\d{4}" placeholder="DD-MM-YYYY" class="form-control text-end mb-2 om-border" required>
+        </div>
+        <div class="col-md-6">
+          <label for="name" class="form-label d-flex justify-content-end">* שם מלא</label>
+          <input type="text" name="name" id="name" placeholder="שם מלא" autofocus="autofocus" class="form-control om-text-rtl om-border" required>
+        </div>
+        <div class="col-12">
+          <label for="email" class="form-label d-flex justify-content-end">* אימייל</label>
+          <input type="email" name="email" id="email" placeholder="אימייל" class="form-control om-text-rtl om-border" required>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="form-control om-btn mb-3">שליחה</button>
+        </div>
+      </form>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

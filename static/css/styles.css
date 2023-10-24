@@ -1,0 +1,26 @@
+body {
+  background-image: url ("");
+}
+
+.om-border {
+  border: none;
+  border-bottom: 2px solid #AE8BC3;
+}
+.om-btn {
+  background-color: #AE8BC3;
+  color: white;
+}
+.om-btn:hover {
+  background-color: #5BD3D4;
+  color: white;
+}
+.om-color {
+  color: #AE8BC3;
+}
+.om-h-color {
+  color: #EF70C1;
+}
+.om-text-rtl {
+  direction: rtl;
+  text-align: justify;
+}
